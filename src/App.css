@@ -12,7 +12,7 @@
 .app__header {
   background-color: #fff;
   padding: 15px 20px 12px;
-  border-bottom: 1px solid #ddd;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
 }
 
 .app__headerImage {

@@ -1,8 +1,9 @@
 .post {
   background-color: #ffffff;
   max-width: 500px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  /* border: 1px solid #ddd; */
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.15);
 
   margin: 20px auto 20px;
 }
