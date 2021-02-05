@@ -20,3 +20,15 @@
   max-width: 100px;
 }
 
+.app__signup {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  padding: 10px;
+}
+
+.app__signup input,
+.app__signup button {
+margin-top:20px;
+}
