@@ -1,18 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
 
 .app {
   background-color: #fefefe;
   height: 100vh;
 }
 
+.app__logo {
+  margin-top: 2px;
+  font-weight: 900;
+  font-style: italic;
+  color: #222;
+}
+
 .app__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #fff;
   padding: 15px 20px 12px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 .app__headerImage {
@@ -30,5 +45,27 @@
 
 .app__signup input,
 .app__signup button {
-margin-top:20px;
+  margin-top: 20px;
+}
+
+.app__loginContainer button {
+  margin-left: 10px;
+}
+
+.app__header button,
+.app__signup button,
+.imageupload button {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #222;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+}
+
+.app__header button:hover,
+.app__signup button:hover,
+.imageupload button:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  background-color: #444;
+  color: #fff;
 }
