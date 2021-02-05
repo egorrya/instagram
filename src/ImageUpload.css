@@ -1,0 +1,83 @@
+.imageupload__open {
+  font-weight: 900;
+  display: inline-block;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  background: #222;
+  color: #fff;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: 0;
+  border-radius: 50%;
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.imageupload__open:hover {
+  color: #222;
+  background: #fff;
+}
+
+.imageupload__open:active {
+  outline: none;
+  border: 0;
+}
+
+.imageupload {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  outline: none;
+
+  border-radius: 10px;
+  margin: 10px auto;
+  text-align: center;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.imageupload__progress {
+  width: 100%;
+}
+
+.imageupload input[type="text"] {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  width: 100%;
+  color: #666;
+  outline: none;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.imageupload input[type="text"]:focus {
+  background: #eee;
+}
+
+.imageupload input[type="file"] {
+  /* display: none; */
+  outline: none;
+  margin-bottom: 5px;
+  margin-top: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  padding: 10px 30px;
+}

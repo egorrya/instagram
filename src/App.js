@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Post from './Post';
+import ImageUpload from './ImageUpload';
 
 // Google Firebase
 import { db, auth } from './firebase';
@@ -9,6 +10,7 @@ import { db, auth } from './firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Button, Input } from '@material-ui/core';
+
 
 // Styling for Material Ui
 function getModalStyle() {
@@ -65,7 +67,7 @@ function App() {
   }, [user, username])
 
   useEffect(() => {
-    db.collection('posts').onSnapshot(snapshot => {
+    db.collection('posts').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       // every new post's added, this code runs
       setPosts(snapshot.docs.map(doc => ({
         id: doc.id,
@@ -101,6 +103,7 @@ function App() {
 
   return (
     <div className="App">
+
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -109,7 +112,7 @@ function App() {
 
           <form className="app__signup">
 
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="" className="app__headerImage"/>
+              <h2 className="app__logo">Neinsta</h2>
               
               <Input 
                 placeholder="Username" 
@@ -142,7 +145,7 @@ function App() {
 
           <form className="app__signup">
 
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="" className="app__headerImage"/>
+              <h2 className="app__logo">Neinsta</h2>
              
               <Input 
                 placeholder="Email" 
@@ -163,18 +166,20 @@ function App() {
       </Modal>
 
       <div className="app__header">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="" className="app__headerImage"/>
-      </div>
-
-      {user ? (
+      
+      <h2 className="app__logo">Neinsta</h2>
+      
+        {user ? (
         <Button onClick={() => auth.signOut()}>Log Out</Button>
-      ) : (
-        <div className="app__loginContainer">
-          <Button onClick={() => setOpenSignIn(true)}>Log In</Button>
-          <Button onClick={() => setOpen(true)}>Sign Up</Button>
-        </div>   
-      )}
-     
+        ) : (
+          <div className="app__loginContainer">
+            <Button onClick={() => setOpenSignIn(true)}>Log In</Button>
+            <Button onClick={() => setOpen(true)}>Sign Up</Button>
+          </div>   
+        )}
+      
+      
+      </div>
       
       {
         posts.map(({id, post}) => (
@@ -185,6 +190,15 @@ function App() {
             imageUrl={post.imageUrl}/>
         ))
       }
+
+      {/* Image Upload */}
+      {/* user? < is like "try catch method" */}
+      {user?.displayName ? (
+      <ImageUpload username={user.displayName} />
+      ) : (
+        <h3> </h3>
+      )} 
+      
     </div>
   );
 }
