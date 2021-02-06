@@ -42,7 +42,7 @@
 .post__comments {
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 0 10px 0;
   /* width: 100vw; */
 }
 
@@ -51,6 +51,10 @@
   margin-bottom: 5px;
   line-height: 20px;
   word-break: break-word;
+}
+
+.post__comments p:last-child {
+  margin-bottom: 15px;
 }
 
 .post__commentBox {

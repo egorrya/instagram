@@ -202,7 +202,7 @@ function App() {
       {user?.displayName ? (
       <ImageUpload username={user.displayName} />
       ) : (
-        <span></span>
+        <p className="App__disclaimer">Log in to post and comment</p>
       )} 
       
     </div>
