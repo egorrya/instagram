@@ -60,6 +60,7 @@
   font-size: 13px;
   width: 100%;
   color: #666;
+  background-color: #eee;
   outline: none;
   padding: 10px 20px;
   margin: 8px 0;
@@ -71,7 +72,8 @@
 }
 
 .imageupload input[type="text"]:focus {
-  background: #eee;
+  background-color: #ddd;
+  color: #111;
 }
 
 .imageupload input[type="file"] {
